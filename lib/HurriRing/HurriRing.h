@@ -118,7 +118,7 @@ class HurriRing
         void _static(uint32_t color);
         void _showSection(uint8_t section, uint32_t color);
         void _showRingPart(uint8_t total_parts, uint8_t part, u_int32_t color);
-        void _shuffleSections();
+        void _shuffleSections(u_int32_t color);
 
         // common functions
         State _stringToState(const std::string& stateStr);
