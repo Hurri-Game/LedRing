@@ -134,7 +134,7 @@ void HurriRing::loop() {
             break;
 
         case HurriRing::State::SHUFFLE_SECTIONS:
-            this->_shuffleSections();
+            this->_shuffleSections(this->colorParam);
             break;
 
         case HurriRing::State::BRIGHTNESS:
@@ -372,9 +372,9 @@ void HurriRing::_showRingPart(uint8_t total_parts, uint8_t part, u_int32_t color
     }
 }
 
-void HurriRing::_shuffleSections(){
+void HurriRing::_shuffleSections(u_int32_t color){
     uint8_t randomSection = random(0, HurriRing::Section::NUM_OF_SECTIONS);
-    this->_showSection(randomSection, HurriRing::Color::RED);
+    this->_showSection(randomSection, color);
     delay(500);
     this->_fadeOut(5);
 }
